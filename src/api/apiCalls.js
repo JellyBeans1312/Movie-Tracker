@@ -25,14 +25,18 @@ export const getUser = async (user) => {
   } catch (error) {
     console.log(error.message)
     // throw Error(error.message)
-  } 
+  }
 }
 
-export const favoriteMovie = async (userId, movieInfo) => {
+export const checkFavorite = async (user, movie) => {
+  
+}
+
+export const favoriteMovie = async (movieInfo) => {
   try {
     const options = {
       method: 'POST',
-      body: JSON.stringify(userId, ...movieInfo),
+      body: JSON.stringify(movieInfo),
       headers: {
         'Content-Type': 'application/json'
       }
