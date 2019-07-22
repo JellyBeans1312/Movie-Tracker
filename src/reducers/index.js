@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
 import { movieReducer } from './movieReducer';
-import { loginUserReducer, showErrorReducer } from './userReducer';
+import { loginUserReducer, showErrorReducer, userFavoritesReducer } from './userReducer';
 
 const rootReducer = combineReducers({
   movies: movieReducer,
   login: loginUserReducer,
-  showError: showErrorReducer
+  showError: showErrorReducer,
+  userFavorites: userFavoritesReducer
 });
 
 export default rootReducer;

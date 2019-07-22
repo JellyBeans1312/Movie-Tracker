@@ -1,32 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './SignUp.css'
 
 export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
   return (
     <section>
-      <form onSubmit={handleAdd}>
-        <input
+      <form className='sign-in-form' onSubmit={handleAdd}>
+        <input className='sign-up'
           type="text"
           value={name}
           name="name"
           placeholder='Name'
           onChange={handleAddChange}
         />
-        <input
+        <input className='sign-up'
           type="text"
           value={email}
           name="email"
           placeholder='example@example.com'
           onChange={handleAddChange}
         />
-        <input
+        <input className='sign-up'
           type="text"
           value={password}
           name="password"
           placeholder='Password'
           onChange={handleAddChange}
         />
-      <button>Sign Up</button>
+      <button className='sign-up-btn'>Sign Up</button>
     </form>
   </section>
   )

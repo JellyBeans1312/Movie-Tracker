@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { SignUp } from '../SignUp/SignUp'
 import { login, showError } from '../../actions';
 import { connect } from 'react-redux';
-import { getUser } from '../../api/apiCalls'
+import { getUser, addUser } from '../../api/apiCalls'
 import { Redirect } from 'react-router'
+import './SignUpMenu.css'
 
 class SignUpMenu extends Component {
   constructor(props) {
@@ -12,7 +13,8 @@ class SignUpMenu extends Component {
       name: '',
       email: '',
       password: '',
-      display: ''
+      display: '',
+      error: null
     };
   }
 
@@ -21,36 +23,45 @@ class SignUpMenu extends Component {
     this.setState({ [name]: value })
   }
 
-  handleAdd = (e) => {
-    e.preventDefault()
-    this.addUser(this.state)
-    .then(user => this.props.login(user))
-    this.setState({display: 'loggedIn'})
-  }
-
-  addUser = async (user) => {
+  handleAdd = async (e) => {
     try {
-      const options = {
-        method: 'POST',
-        body: JSON.stringify(user),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-      
-      const response = await fetch('http://localhost:3000/api/users/new', options)
-      const result = await response.json()
-      
-      if (!response.ok) {
-        return this.props.showError('This user already exists')
+      e.preventDefault()
+      const response = await addUser(this.state);
+      console.log(response)
+      if (response === true) {
+        this.props.login(this.state)
+        this.setState({display: 'loggedIn'})
       } else {
-        return getUser(this.state)
+        this.setState({ error: "Email has already been used" });
       }
-
     } catch (error) {
-      console.log(error.message);
+      this.setState({ error: error.message });
     }
   }
+
+  // addUser = async (user) => {
+  //   try {
+  //     const options = {
+  //       method: 'POST',
+  //       body: JSON.stringify(user),
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       }
+  //     }
+      
+  //     const response = await fetch('http://localhost:3000/api/users/new', options)
+  //     const result = await response.json()
+      
+  //     if (!response.ok) {
+  //       return this.props.showError('This user already exists')
+  //     } else {
+  //       return getUser(this.state)
+  //     }
+
+  //   } catch (error) {
+  //     console.log(error.message);
+  //   }
+  // }
 
   render() {
     const isLoggedIn = this.state.display === 'loggedIn'
@@ -59,12 +70,13 @@ class SignUpMenu extends Component {
     if(!isLoggedIn) {
       view = <SignUp name={this.state.name} email={this.state.email} password={this.state.password} handleAddChange={this.handleAddChange} handleAdd={this.handleAdd}/>
     } else {
-      view = <Redirect to='/Login'/>
+      view = <Redirect to='/LoggedIn'/>
     }
     return (
-      <div>
+      <section className='sign-up-bar' >
         {view}
-      </div>
+        {this.state.error && <h2 className='error'>{this.state.error}</h2>}
+      </section>
     )
   }
 }

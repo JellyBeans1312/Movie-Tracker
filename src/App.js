@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import NavBar from './components/NavBar/NavBar';
 import { fetchMovies } from './api/apiCalls';
 
-class App extends Component {
+export class App extends Component {
   async componentDidMount() { 
     await fetchMovies()
       .then(movies => this.props.showMovies(movies))

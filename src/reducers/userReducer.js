@@ -18,3 +18,12 @@ export const loginUserReducer = (state = {}, action) => {
       return state;
   }
 }
+
+export const userFavoritesReducer = (state = [], action) => {
+  switch(action.type) {
+    case 'SET_FAVORITES':
+      return action.favorites;
+    default:
+      return state;
+  }
+}

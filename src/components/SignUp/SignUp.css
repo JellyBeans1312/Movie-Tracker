@@ -1,0 +1,32 @@
+
+.sign-in-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+}
+
+.sign-up{
+  background-color: black;
+  border-color: red;
+  color: red;
+  height: 30px;
+  margin: 10px;
+  width: 175px;
+}
+
+.sign-up-btn {
+  background-color: black;
+  border-color: red;
+  border-radius: 20px;
+  color: red;
+  font-size: 1.5rem;
+  height: 35px;
+  margin: 10px;
+  width: 150px;
+}
+
+::placeholder {
+  color: red;
+  font-size: 15px;
+}
