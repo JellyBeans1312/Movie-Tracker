@@ -8,7 +8,7 @@ import { fetchFavorites } from '../../api/apiCalls';
 import { setFavorites } from '../../actions'
 import './AccountMenu.css'
 
-class AccountMenu extends Component {
+export class AccountMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,6 +39,7 @@ class AccountMenu extends Component {
   }
 
   render() {
+    console.log(this.props)
     const isLoggedIn = this.state.display === 'loggedIn'
     let view;
     
