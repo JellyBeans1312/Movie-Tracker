@@ -4,7 +4,7 @@ import '../MovieSpecs/MovieSpecs.css'
 import { connect } from 'react-redux';
 import { favoriteMovie } from '../../api/apiCalls'; 
 
-class MovieSpecs extends Component {
+export class MovieSpecs extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,14 +31,12 @@ class MovieSpecs extends Component {
       const result = await response.json()
       return result;
     } catch (error) {
-      console.log(error)
       this.setState({ error: 'You need to log in to add favorites' })
     }
   }
   
   render() {
     const { title, backdrop_path, overview, vote_average, release_date, user} = this.props;
-    console.log(this.props)
     const imgSrc = `http://image.tmdb.org/t/p/w1280//${backdrop_path}`
     return (
       <div className='container'>

@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
-
   return (
     <section>
       <form onSubmit={handleAdd}>
