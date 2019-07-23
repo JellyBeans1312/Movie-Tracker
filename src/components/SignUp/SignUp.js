@@ -4,7 +4,6 @@ import './SignUp.css'
 import PropTypes from 'prop-types';
 
 export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
-
   return (
     <section>
       <form className='sign-in-form' onSubmit={handleAdd}>
@@ -35,7 +34,7 @@ export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
   )
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   error: store.error
 });
 

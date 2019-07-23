@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieSpecs should match snapshot 1`] = `
+<div
+  className="container"
+>
+  <h1
+    className="title"
+  >
+    <span
+      className="rating"
+    >
+       Rating : 
+       / 10 
+    </span>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      Add to Favorites
+    </button>
+    <button
+      className="btn"
+      onClick={[Function]}
+    >
+      Delete Favorite
+    </button>
+  </h1>
+  <img
+    alt="movie backdrop"
+    className="back-drop"
+    src="http://image.tmdb.org/t/p/w1280//undefined"
+  />
+  <p
+    className="description"
+  />
+  <p
+    className="date"
+  >
+    Release Date: 
+  </p>
+  <h3 />
+  <Link
+    to="/LoggedIn"
+  >
+    <button
+      className="back-btn"
+    >
+      ◀ back
+    </button>
+  </Link>
+</div>
+`;

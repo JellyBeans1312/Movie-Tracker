@@ -7,7 +7,7 @@ import { setFavorites } from '../../actions';
 import PropTypes from 'prop-types';
 
 
-class MovieSpecs extends Component {
+export class MovieSpecs extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,8 +30,7 @@ class MovieSpecs extends Component {
     } catch (error) {
       this.setState({ error: error.message })
     }
-
-  }
+  } 
 
   handleDelete = async () => {
     try {
@@ -74,11 +73,11 @@ class MovieSpecs extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.login,
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
 });
 
