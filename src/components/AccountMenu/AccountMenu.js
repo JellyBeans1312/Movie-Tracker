@@ -7,6 +7,7 @@ import { getUser } from '../../api/apiCalls'
 import { fetchFavorites } from '../../api/apiCalls';
 import { setFavorites } from '../../actions'
 import './AccountMenu.css'
+import PropTypes from 'prop-types';
 
 export class AccountMenu extends Component {
   constructor(props) {
@@ -67,5 +68,11 @@ export const mapDispatchToProps = (dispatch) => ({
   // showError: (error) => dispatch(showError(error)),
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
 });
+
+AccountMenu.propTypes = {
+  user: PropTypes.object.isRequired,
+  login: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountMenu)

@@ -9,7 +9,7 @@ import { logOut, setFavorites } from '../../actions';
 import { connect } from 'react-redux';
 import './NavBar.css'
 import { Link } from 'react-router-dom'
-
+import PropTypes from 'prop-types';
 
 class NavBar extends Component {
   constructor(props) {
@@ -96,5 +96,13 @@ const mapDispatchToProps = dispatch => ({
   logOut: () => dispatch(logOut()),
   setFavorites: favorites => dispatch(setFavorites(favorites))
 });
+
+NavBar.propTypes = {
+  user: PropTypes.object.isRequired,
+  movies: PropTypes.array.isRequired,
+  logOut: PropTypes.func.isRequired,
+  setFavorites: PropTypes.func.isRequired,
+  userFavorites: PropTypes.array.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
