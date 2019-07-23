@@ -11,7 +11,7 @@ import './NavBar.css'
 import { Link } from 'react-router-dom'
 
 
-class NavBar extends Component {
+export class NavBar extends Component {
   constructor(props) {
     super(props);
   }
@@ -82,11 +82,11 @@ class NavBar extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   userFavorites: store.userFavorites
 })
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logOut())
 });
 

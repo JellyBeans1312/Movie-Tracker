@@ -29,7 +29,6 @@ export class MovieSpecs extends Component {
     } catch (error) {
       console.log(error.message)
     }
-
   } 
 
   handleDelete = async () => {
@@ -73,12 +72,12 @@ export class MovieSpecs extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.login,
-})
+});
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieSpecs);
