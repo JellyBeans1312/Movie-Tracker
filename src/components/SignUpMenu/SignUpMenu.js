@@ -6,7 +6,7 @@ import { getUser, addUser } from '../../api/apiCalls'
 import { Redirect } from 'react-router'
 import './SignUpMenu.css'
 
-class SignUpMenu extends Component {
+export class SignUpMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -39,30 +39,6 @@ class SignUpMenu extends Component {
     }
   }
 
-  // addUser = async (user) => {
-  //   try {
-  //     const options = {
-  //       method: 'POST',
-  //       body: JSON.stringify(user),
-  //       headers: {
-  //         'Content-Type': 'application/json'
-  //       }
-  //     }
-      
-  //     const response = await fetch('http://localhost:3000/api/users/new', options)
-  //     const result = await response.json()
-      
-  //     if (!response.ok) {
-  //       return this.props.showError('This user already exists')
-  //     } else {
-  //       return getUser(this.state)
-  //     }
-
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
-
   render() {
     const isLoggedIn = this.state.display === 'loggedIn'
     let view;
@@ -81,12 +57,12 @@ class SignUpMenu extends Component {
   }
 }
 
-const mapStateToProps = (store) => ({
+export const mapStateToProps = (store) => ({
   showError: store.showError
 });
 
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
   showError: (error) => dispatch(showError(error))
 });
