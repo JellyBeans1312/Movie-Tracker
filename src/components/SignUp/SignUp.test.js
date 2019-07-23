@@ -22,11 +22,11 @@ describe('SignUp', () => {
   describe('mapStateToProps', () => {
     it('should return a string with an error', () => {
       const mockState = {
-        error: 'This is wrong',
+        error: 'You fucked up',
         filter: 'SHOW_ERROR'
       }
       const expected = {
-        error: 'This is wrong'
+        error: 'You fucked up'
       }
 
       const mappedProps = mapStateToProps(mockState)

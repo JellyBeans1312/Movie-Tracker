@@ -33,7 +33,7 @@ export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
   )
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   error: store.error
 });
 

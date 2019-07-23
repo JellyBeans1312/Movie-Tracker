@@ -3,9 +3,11 @@
 exports[`SignUp should match snapshot 1`] = `
 <section>
   <form
+    className="sign-in-form"
     onSubmit={[MockFunction]}
   >
     <input
+      className="sign-up"
       name="name"
       onChange={[MockFunction]}
       placeholder="Name"
@@ -13,6 +15,7 @@ exports[`SignUp should match snapshot 1`] = `
       value="Andre 3000"
     />
     <input
+      className="sign-up"
       name="email"
       onChange={[MockFunction]}
       placeholder="example@example.com"
@@ -20,13 +23,16 @@ exports[`SignUp should match snapshot 1`] = `
       value="andre@outkast.com"
     />
     <input
+      className="sign-up"
       name="password"
       onChange={[MockFunction]}
       placeholder="Password"
       type="text"
       value="imBetterThanBIGBoi321"
     />
-    <button>
+    <button
+      className="sign-up-btn"
+    >
       Sign Up
     </button>
   </form>
