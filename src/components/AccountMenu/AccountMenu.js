@@ -56,15 +56,15 @@ export class AccountMenu extends Component {
   }
 };
 
-const mapStateToProps = (store) => ({
-  login: store.login,
+export const mapStateToProps = (store) => ({
+  // login: store.login,
   user: store.login,
-  error: store.showError
+  // error: store.showError
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
-  showError: (error) => dispatch(showError(error)),
+  // showError: (error) => dispatch(showError(error)),
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
 });
 
