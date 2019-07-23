@@ -4,7 +4,7 @@ import './Login.css'
 export const Login = ({ email, password, handleChange, handleSubmit}) => {
   return (
     <section>
-      <form className='log-in-form'onSubmit={handleSubmit}>
+      <form className='log-in-form' onSubmit={handleSubmit}>
         <input className='log-in'
           type="text"
           value={email}
