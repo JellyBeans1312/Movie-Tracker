@@ -20,21 +20,21 @@ describe('Login', () => {
   });
 
   it('should match the snapshot', () => {
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot();
   });
 
   it('should invoke handleSubmit on submit', () => {
-    // const e = {
-    //   preventDefault: jest.fn()
-    // }
-    wrapper.find('form').simulate('submit')
-
-    expect(wrapper.instance().handleSubmit());
+    const e = {
+      preventDefault: jest.fn()
+    }
+    wrapper.find('form').simulate('submit');
+    
+    expect(wrapper.instance().handleSubmit(e));
   });
 
   it('should invoke handleChange on change', () => {
     wrapper.find(".log-in-email").simulate('change', {value: 'whatever'})
 
-    expect(wrapper.instance().props.handleChange());
+    expect(wrapper.instance() .handleChange());
   });
 });
