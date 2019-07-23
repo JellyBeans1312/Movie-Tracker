@@ -33,8 +33,8 @@ describe('Login', () => {
   });
 
   it('should invoke handleChange on change', () => {
-    wrapper.find("log-in").simulate('change', {value: 'whatever'})
+    wrapper.find(".log-in-email").simulate('change', {value: 'whatever'})
 
-    expect(wrapper.instance().handleChange());
+    expect(wrapper.instance().props.handleChange());
   });
 });

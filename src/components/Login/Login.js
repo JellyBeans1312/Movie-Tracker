@@ -5,14 +5,14 @@ export const Login = ({ email, password, handleChange, handleSubmit}) => {
   return (
     <section>
       <form className='log-in-form' onSubmit={handleSubmit}>
-        <input className='log-in'
+        <input className='log-in-email'
           type="text"
           value={email}
           name="email"
           placeholder='example@example.com'
           onChange={handleChange}
           />
-        <input className='log-in'
+        <input className='log-in-password'
           type="text"
           value={password}
           name="password"
