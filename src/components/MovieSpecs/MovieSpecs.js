@@ -6,7 +6,7 @@ import { favoriteMovie, removeFavorite, fetchFavorites } from '../../api/apiCall
 import { setFavorites } from '../../actions'
 
 
-class MovieSpecs extends Component {
+export class MovieSpecs extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,8 +29,7 @@ class MovieSpecs extends Component {
     } catch (error) {
       console.log(error.message)
     }
-
-  }
+  } 
 
   handleDelete = async () => {
     try {
@@ -46,7 +45,6 @@ class MovieSpecs extends Component {
  
   render() {
     const { title, backdrop_path, overview, vote_average, release_date, user} = this.props;
-    console.log(this.props)
     const imgSrc = `http://image.tmdb.org/t/p/w1280//${backdrop_path}`
     return (
       <div className='container'>
@@ -74,12 +72,12 @@ class MovieSpecs extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.login,
-})
+});
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieSpecs);

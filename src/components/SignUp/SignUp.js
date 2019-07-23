@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import './SignUp.css'
 
 export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
-
   return (
     <section>
       <form className='sign-in-form' onSubmit={handleAdd}>
@@ -34,7 +33,7 @@ export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
   )
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   error: store.error
 });
 

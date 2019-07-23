@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar should match snapshot 1`] = `
+<div>
+  <div
+    className="header"
+  >
+    <h1
+      className="app-name"
+    >
+       
+      <span
+        className="bang"
+      >
+        !
+      </span>
+      Netflix
+    </h1>
+    <NavLink
+      className="nav-fav"
+      to="/favorites"
+    >
+      <button
+        className="nav-btn"
+      >
+        Favorites
+      </button>
+    </NavLink>
+    <NavLink
+      className="nav-log-in"
+      to="/Login"
+    >
+      <button
+        className="nav-log-in-btn"
+      >
+        Login
+      </button>
+    </NavLink>
+    <NavLink
+      className="nav-sign-up"
+      to="/signup"
+    >
+      <button
+        className="nav-btn"
+      >
+        Sign Up
+      </button>
+    </NavLink>
+  </div>
+  <Route
+    exact={true}
+    path="/"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/Login"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/LoggedIn"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/:id"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/Favorites"
+    render={[Function]}
+  />
+  <Route
+    exact={true}
+    path="/signup"
+    render={[Function]}
+  />
+</div>
+`;
