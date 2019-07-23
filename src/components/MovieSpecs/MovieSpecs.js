@@ -27,7 +27,7 @@ class MovieSpecs extends Component {
       .then(result => this.props.setFavorites(result))
       this.setState({ isFavorited: true })
     } catch (error) {
-      console.log(error.message)
+      this.setState({ error: error.message })
     }
 
   }
@@ -40,7 +40,7 @@ class MovieSpecs extends Component {
       .then(result => this.props.setFavorites(result))
       this.setState({ isFavorited: false });
     } catch (error) {
-      console.log(error.message)
+      this.setState({ error: error.message })
     }
   }
  

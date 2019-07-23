@@ -1,11 +1,11 @@
 // import React from 'react';
 import React, { Component } from 'react';
-import {Route, NavLink} from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 import MovieContainter from '../MovieContainer/MovieContainer'
 import MovieSpecs from '../MovieSpecs/MovieSpecs'
 import AccountMenu from '../AccountMenu/AccountMenu'
 import SignUpMenu  from '../SignUpMenu/SignUpMenu'
-import { logOut } from '../../actions';
+import { logOut, setFavorites } from '../../actions';
 import { connect } from 'react-redux';
 import './NavBar.css'
 import { Link } from 'react-router-dom'
@@ -16,15 +16,19 @@ class NavBar extends Component {
     super(props);
   }
 
+  logOutUser = () => {
+    this.props.logOut();
+    this.props.setFavorites([]);
+  }
+
   render () {
-    console.log(this.props)
   return (
     <div>
       <div className = 'header'>
         <h1 className='app-name'> <span className='bang'>!</span>Netflix</h1>
-        <NavLink to='/favorites' className='nav-fav'>
+        {this.props.user !== null && <NavLink to='/favorites' className='nav-fav'>
           <button className='nav-btn'>Favorites</button>
-        </NavLink>
+        </NavLink>} 
         <NavLink to='/Login' className='nav-log-in'>
           <button className='nav-log-in-btn'>Login</button>
         </NavLink>
@@ -47,7 +51,7 @@ class NavBar extends Component {
         <section>
           <div className='logged-in-bar'>
             <h2 className='user-name'>{this.props.user.name && `Welcome ${this.props.user.name}!`}</h2>
-          <Link to='/' onClick={() => this.props.logout()}>
+          <Link to='/' onClick={() => this.logOutUser()}>
             <button className='sign-out-btn'>Sign Out</button>
           </Link>
           </div>
@@ -65,7 +69,7 @@ class NavBar extends Component {
         <section>
           <div className='logged-in-bar'>
             <h2 className='user-name'>{this.props.user.name && `Welcome ${this.props.user.name}!`}</h2>
-          <Link to='/' onClick={() => this.props.logout()}>
+          <Link to='/' onClick={() => this.logOutUser()}>
             <button className='sign-out-btn' onClick={this.logoutUser}>Sign Out</button>
           </Link>
           </div>
@@ -84,11 +88,13 @@ class NavBar extends Component {
 }
 
 const mapStateToProps = store => ({
-  userFavorites: store.userFavorites
+  userFavorites: store.userFavorites,
+  user: store.login
 })
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logOut())
+  logOut: () => dispatch(logOut()),
+  setFavorites: favorites => dispatch(setFavorites(favorites))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
