@@ -32,14 +32,13 @@ export class AccountMenu extends Component {
       .then(data => this.props.login(data))
       this.setState({display: 'loggedIn'})
       await fetchFavorites(this.props.user.id)
-        .then(result => this.props.setFavorites(result))
+      .then(result => this.props.setFavorites(result))
     } catch (error) {
       this.setState({ error: error.message })
     }
   }
 
   render() {
-    console.log(this.props)
     const isLoggedIn = this.state.display === 'loggedIn'
     let view;
     
