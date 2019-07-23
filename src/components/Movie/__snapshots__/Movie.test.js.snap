@@ -12,3 +12,4 @@ exports[`Movie should match snapshot 1`] = `
   />
 </Link>
 `;
+exports[`Movie should match the snapshot 1`] = `ShallowWrapper {}`;
