@@ -22,6 +22,10 @@ describe('SignUpMenu', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   describe('SignUpMenu Component', () => {
     it('should update state when handle add change is called', () => {
       const mockEvent = {target: {name: 'Nombre', value:'password'}}
