@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getUser, addUser } from '../../api/apiCalls'
 import { Redirect } from 'react-router'
 import './SignUpMenu.css'
+import PropTypes from 'prop-types';
 
 export class SignUpMenu extends Component {
   constructor(props) {
@@ -40,6 +41,7 @@ export class SignUpMenu extends Component {
   }
 
   render() {
+    console.log(this.props)
     const isLoggedIn = this.state.display === 'loggedIn'
     let view;
 
@@ -57,14 +59,15 @@ export class SignUpMenu extends Component {
   }
 }
 
-export const mapStateToProps = (store) => ({
-  showError: store.showError
-});
-
-
 export const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
   showError: (error) => dispatch(showError(error))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUpMenu)
+SignUpMenu.propTypes = {
+  login: PropTypes.func.isRequired,
+  showError: PropTypes.isRequired,
+  user: PropTypes.object.isRequired
+}
+
+export default connect(null, mapDispatchToProps)(SignUpMenu)

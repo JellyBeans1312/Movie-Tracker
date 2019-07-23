@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.css'
+import PropTypes from 'prop-types';
 
 export const Login = ({ email, password, handleChange, handleSubmit}) => {
   return (
@@ -25,4 +26,9 @@ export const Login = ({ email, password, handleChange, handleSubmit}) => {
      )
   };
 
-  
+  Login.propTypes = {
+    email: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired
+  }
