@@ -7,8 +7,9 @@ import { getUser } from '../../api/apiCalls'
 import { fetchFavorites } from '../../api/apiCalls';
 import { setFavorites } from '../../actions'
 import './AccountMenu.css'
+import PropTypes from 'prop-types';
 
-class AccountMenu extends Component {
+export class AccountMenu extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +33,7 @@ class AccountMenu extends Component {
       .then(data => this.props.login(data))
       this.setState({display: 'loggedIn'})
       await fetchFavorites(this.props.user.id)
-        .then(result => this.props.setFavorites(result))
+      .then(result => this.props.setFavorites(result))
     } catch (error) {
       this.setState({ error: error.message })
     }
@@ -56,16 +57,22 @@ class AccountMenu extends Component {
   }
 };
 
-const mapStateToProps = (store) => ({
-  login: store.login,
+export const mapStateToProps = (store) => ({
+  // login: store.login,
   user: store.login,
-  error: store.showError
+  // error: store.showError
 });
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   login: (user) => dispatch(login(user)),
-  showError: (error) => dispatch(showError(error)),
+  // showError: (error) => dispatch(showError(error)),
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
 });
+
+AccountMenu.propTypes = {
+  user: PropTypes.object.isRequired,
+  login: PropTypes.func.isRequired,
+  favorites: PropTypes.array.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(AccountMenu)

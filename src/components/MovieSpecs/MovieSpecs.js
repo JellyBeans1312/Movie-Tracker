@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom';
 import '../MovieSpecs/MovieSpecs.css'
 import { connect } from 'react-redux';
 import { favoriteMovie, removeFavorite, fetchFavorites } from '../../api/apiCalls';
-import { setFavorites } from '../../actions'
+import { setFavorites } from '../../actions';
+import PropTypes from 'prop-types';
 
 
-class MovieSpecs extends Component {
+export class MovieSpecs extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,10 +28,9 @@ class MovieSpecs extends Component {
       .then(result => this.props.setFavorites(result))
       this.setState({ isFavorited: true })
     } catch (error) {
-      console.log(error.message)
+      this.setState({ error: error.message })
     }
-
-  }
+  } 
 
   handleDelete = async () => {
     try {
@@ -40,13 +40,12 @@ class MovieSpecs extends Component {
       .then(result => this.props.setFavorites(result))
       this.setState({ isFavorited: false });
     } catch (error) {
-      console.log(error.message)
+      this.setState({ error: error.message })
     }
   }
  
   render() {
-    const { title, backdrop_path, overview, vote_average, release_date, user} = this.props;
-    console.log(this.props)
+    const { title, backdrop_path, overview, vote_average, release_date} = this.props;
     const imgSrc = `http://image.tmdb.org/t/p/w1280//${backdrop_path}`
     return (
       <div className='container'>
@@ -74,12 +73,22 @@ class MovieSpecs extends Component {
   }
 }
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   user: store.login,
-})
+});
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
-})
+});
+
+MovieSpecs.propTypes = {
+  user: PropTypes.object.isRequired,
+  setFavorites: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  backdrop_path: PropTypes.string.isRequired,
+  overview: PropTypes.string.isRequired,
+  vote_average: PropTypes.string.isRequired
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieSpecs);

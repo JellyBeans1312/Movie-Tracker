@@ -1,3 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Movie should match snapshot 1`] = `
+<Link
+  className="movie"
+  key="1"
+  to="/1"
+>
+  <img
+    alt="movie poster"
+    src="http://image.tmdb.org/t/p/w185//"
+  />
+</Link>
+`;
 exports[`Movie should match the snapshot 1`] = `ShallowWrapper {}`;

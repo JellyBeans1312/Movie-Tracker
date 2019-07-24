@@ -6,7 +6,8 @@
   margin: auto;
 }
 
-.log-in{
+.log-in-password,
+.log-in-email {
   background-color: black;
   border-color: red;
   color: red;

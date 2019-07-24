@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './SignUp.css'
+import PropTypes from 'prop-types';
 
 export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
-
   return (
     <section>
       <form className='sign-in-form' onSubmit={handleAdd}>
@@ -34,8 +34,17 @@ export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
   )
 };
 
-const mapStateToProps = store => ({
+export const mapStateToProps = store => ({
   error: store.error
 });
+
+SignUp.propTypes = {
+  error: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+  handleAdd: PropTypes.func.isRequired,
+  handleAddChange: PropTypes.func.isRequired
+}
 
 export default connect(mapStateToProps)(SignUp);
