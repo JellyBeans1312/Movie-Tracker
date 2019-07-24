@@ -32,6 +32,8 @@ Redux
 Testing with Enzyme & Jest
 
 ### To Run
+
+#### Front End
 In your terminal:
 
 ```bash
@@ -47,3 +49,18 @@ npm start
 ```
 
 Go to `http://localhost:3000/` in your browser to view the code running in the browser.
+
+#### Back End
+
+```bash
+git clone https://github.com/turingschool-examples/movie-tracker
+```
+
+```bash
+npm  install
+```
+
+```bash
+npm start
+```
+Go to `http://localhost:3001/api/users` in your browser you'll see a json response with one user.
