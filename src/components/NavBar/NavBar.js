@@ -92,7 +92,8 @@ export const mapStateToProps = store => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logOut())
+  logOut: () => dispatch(logOut()),
+  setFavorites: (favorites) => dispatch(setFavorites(favorites))
 });
 
 NavBar.propTypes = {

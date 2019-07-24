@@ -88,7 +88,7 @@ MovieSpecs.propTypes = {
   release_date: PropTypes.string.isRequired,
   backdrop_path: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  vote_average: PropTypes.string.isRequired
+  vote_average: PropTypes.number.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieSpecs);
