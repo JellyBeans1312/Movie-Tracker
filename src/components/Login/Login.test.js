@@ -11,11 +11,7 @@ describe('Login', () => {
   beforeEach(() => {
     handleChange = jest.fn();
     handleSubmit = jest.fn();
-    wrapper = shallow(
-      <Login
-      handleChange={handleChange}
-      handleSubmit={handleSubmit}
-      />);
+    wrapper = shallow(<Login handleChange={handleChange} handleSubmit={handleSubmit}/>);
     instance = wrapper.instance();
   });
 
@@ -34,7 +30,7 @@ describe('Login', () => {
 
   it('should invoke handleChange on change', () => {
     wrapper.find(".log-in-email").simulate('change', {value: 'whatever'})
-
-    expect(wrapper.instance() .handleChange());
+    console.log(wrapper.length);
+    expect(instance.handleChange());
   });
 });

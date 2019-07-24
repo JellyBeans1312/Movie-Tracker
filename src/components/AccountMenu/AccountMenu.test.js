@@ -81,13 +81,6 @@ describe('accountMenu', () => {
   });
 
   describe('dispatchStateToProps', () => {
-    let e;
-
-    beforeEach(() => {
-      e = {
-        preventDefault: jest.fn()
-      }
-    })
     
     it('calls dispatch with login action', () => {
       const mockDispatch = jest.fn();

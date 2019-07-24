@@ -56,11 +56,10 @@ export const favoriteMovie = async (movieInfo) => {
       }
     }
 
-    const response = await fetch(`http://localhost:3000/api/users/favorites/new`, options)
-    const result = await response.json()
-    // return result.data
+    await fetch(`http://localhost:3000/api/users/favorites/new`, options)
+  
   } catch (error) {
-    throw new Error("failed to fetch favorites");
+    throw new Error("Failed to fetch favorites");
   }
 }
 
@@ -83,10 +82,9 @@ export const removeFavorite = async (userId, movieId) => {
       }
     }
 
-    const response = await fetch(`http://localhost:3000/api/users/${userId}/favorites/${movieId}`, option);
-    const result = await response.json();
-    console.log(result);
+    await fetch(`http://localhost:3000/api/users/${userId}/favorites/${movieId}`, option);
+    
   } catch (error) {
-
+    throw new Error('Failed to remove favorite')
   }
 }
