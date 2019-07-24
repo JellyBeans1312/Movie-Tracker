@@ -35,6 +35,10 @@ Testing with Enzyme & Jest
 In your terminal:
 
 ```bash
+git clone git@github.com:AntonioFry/Movie-Tracker.git
+```
+
+```bash
 npm  install
 ```
 
