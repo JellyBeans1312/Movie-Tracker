@@ -14,7 +14,7 @@ export const Login = ({ email, password, handleChange, handleSubmit}) => {
           onChange={handleChange}
           />
         <input className='log-in-password'
-          type="text"
+          type="password"
           value={password}
           name="password"
           placeholder='Password'
