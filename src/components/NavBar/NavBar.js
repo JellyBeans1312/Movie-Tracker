@@ -17,7 +17,7 @@ export class NavBar extends Component {
   }
 
   logOutUser = () => {
-    this.props.logOut();
+    this.props.logout();
     this.props.setFavorites([]);
   }
 
@@ -92,7 +92,7 @@ export const mapStateToProps = store => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  logOut: () => dispatch(logOut()),
+  logout: () => dispatch(logOut()),
   setFavorites: (favorites) => dispatch(setFavorites(favorites))
 });
 

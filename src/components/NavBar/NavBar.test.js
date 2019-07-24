@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { NavBar, mapStateToProps, mapDispatchToProps } from './NavBar';
-import { logOut } from '../../actions';
+import { logOut, setFavorites } from '../../actions';
 
 describe('NavBar', () => {
   let wrapper;
@@ -64,6 +64,15 @@ describe('NavBar', () => {
       mappedProps.logout();
 
       expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+    });
+
+    it('should call setFavorites when logout is clicked', () => {
+      const mockDispatch = jest.fn();
+      const actionToDispatch = setFavorites();
+      const mappedProps = mapDispatchToProps(mockDispatch);
+      mappedProps.setFavorites();
+
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
     });
   });
 }); 
