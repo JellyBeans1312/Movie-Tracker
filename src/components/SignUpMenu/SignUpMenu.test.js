@@ -18,6 +18,14 @@ describe('SignUpMenu', () => {
     wrapper = shallow(<SignUpMenu showError={mockShowErrorFunc} login={mockLogin} showError={mockShowError} user={mockUser}/>);
   });
 
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  })
+
   describe('SignUpMenu Component', () => {
     it('should update state when handle add change is called', () => {
       const mockEvent = {target: {name: 'Nombre', value:'password'}}
