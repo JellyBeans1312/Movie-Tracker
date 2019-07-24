@@ -52,10 +52,10 @@ export class MovieSpecs extends Component {
         <h1 className='title'>{title}
           <span className='rating'> Rating : {vote_average} / 10 </span>
 
-          <button onClick={() => this.handleFavorite()} className='btn'>
+          <button onClick={() => this.handleFavorite()} className='btn fav'>
             Add to Favorites
           </button>
-          <button onClick={() => this.handleDelete()} className='btn'>
+          <button onClick={() => this.handleDelete()} className='btn del'>
             Delete Favorite
           </button>
         </h1>
@@ -88,7 +88,7 @@ MovieSpecs.propTypes = {
   release_date: PropTypes.string.isRequired,
   backdrop_path: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  vote_average: PropTypes.string.isRequired
+  vote_average: PropTypes.number.isRequired
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieSpecs);

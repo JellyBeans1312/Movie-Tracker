@@ -66,7 +66,7 @@ export const mapDispatchToProps = (dispatch) => ({
 
 SignUpMenu.propTypes = {
   login: PropTypes.func.isRequired,
-  showError: PropTypes.isRequired,
+  showError: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired
 }
 

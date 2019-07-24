@@ -1,10 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { MovieSpecs, mapDispatchToProps, mapStateToProps } from './MovieSpecs';;
-import { setFavorites } from '../../actions'
+import { setFavorites } from '../../actions';
+import * as requests from '../../api/apiCalls';
+
+jest.mock('../../api/apiCalls')
+requests.fetchFavorites.mockImplementation(() => {})
+
 
 describe('MovieSpecs', () => {
   let wrapper;
+  let mockFavoriteMovie
+
   const mockMovies = [
     {
       vote_count:411,
@@ -38,10 +45,22 @@ describe('MovieSpecs', () => {
     expect(wrapper).toMatchSnapshot() 
   });
 
-  it('should ', async () => {
+  it('should check if favorite movie has been called', async () => {
+    // wrapper.instance().setState({ isFavorited: false })
+    wrapper.find('.fav').simulate('click')
+    await wrapper.instance().handleFavorite()
+    // const favoriteMovie = await jest.fn().mockImplementation(requests.favoriteMovie)
 
+    expect(favoriteMovie).toHaveBeenCalled()
   });
-  
+
+  it('should check if fetchFavorites has been called', async () => {
+    wrapper.find('.del').simulate('click')
+    await wrapper.instance().handleDelete()
+
+    expect(mockFn).toHaveBeenCalled()
+  });
+
   describe('mapStateToProps', () => {
     it('should return an object with the user in it', () => {
       const mockState = {
