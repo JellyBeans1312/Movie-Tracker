@@ -12,9 +12,9 @@ Colby Allen https://github.com/colbyallen012
 
 ## Screenshots
 
-![screencapture-localhost-3001-LoggedIn-2019-07-23-18_41_09](https://user-images.githubusercontent.com/43159025/61756553-be7caa80-ad79-11e9-88b9-c71c9ffdd6fc.png)
-
 ![screencapture-localhost-3001-Login-2019-07-23-18_40_58](https://user-images.githubusercontent.com/43159025/61756575-d0f6e400-ad79-11e9-8307-dbf6419b118f.png)
+
+![screencapture-localhost-3001-LoggedIn-2019-07-23-18_41_09](https://user-images.githubusercontent.com/43159025/61756553-be7caa80-ad79-11e9-88b9-c71c9ffdd6fc.png)
 
 ![screencapture-localhost-3001-429617-2019-07-23-18_41_17](https://user-images.githubusercontent.com/43159025/61756596-e10ec380-ad79-11e9-8b83-35a10998a6d4.png)
 
