@@ -41,7 +41,6 @@ export class SignUpMenu extends Component {
   }
 
   render() {
-    console.log(this.props)
     const isLoggedIn = this.state.display === 'loggedIn'
     let view;
 
