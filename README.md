@@ -1,6 +1,6 @@
 # !Netflix
 
-This was a two week group project at Turing School of Software & Design, where we used a movie database API to display now playing movies using React, Router, and Redux. This application fetches from 'https://www.themoviedb.org/documentation/api' to display the information. A user has the ability to login, or create an account. Once an account is created the user has the ability to favorite and delete favorited movies.
+This was a two week group project at Turing School of Software & Design, where we used a movie database API to display now playing movies using React, Router, and Redux. This application fetches from https://www.themoviedb.org/documentation/api to display the information. A user has the ability to login, or create an account. Once an account is created the user has the ability to favorite and delete favorited movies.
 
 ## Created By
 
