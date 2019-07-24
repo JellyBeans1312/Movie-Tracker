@@ -14,13 +14,13 @@ exports[`MovieSpecs should match snapshot 1`] = `
        / 10 
     </span>
     <button
-      className="btn"
+      className="btn fav"
       onClick={[Function]}
     >
       Add to Favorites
     </button>
     <button
-      className="btn"
+      className="btn del"
       onClick={[Function]}
     >
       Delete Favorite

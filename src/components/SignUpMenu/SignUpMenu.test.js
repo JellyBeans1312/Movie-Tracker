@@ -29,21 +29,6 @@ describe('SignUpMenu', () => {
     })
   })
 
-  describe('mapStateToProps', () => {
-    it('should return an error', () => {
-      const mockState = {
-        showError: 'wrong email and password',
-        user:{}
-      }
-      const expected = {
-        showError: 'wrong email and password'
-      }
-      const mappedProps = mapStateToProps(mockState)
-
-      expect(mappedProps).toEqual(expected)
-    })
-  })
-
   describe('mapDispatchToProps', () => {
     it('should call dispatch with a login error', () => {
       const mockDispatch = jest.fn()
