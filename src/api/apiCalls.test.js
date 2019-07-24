@@ -1,5 +1,5 @@
 import { fetchMovies, getUser, addUser, favoriteMovie, fetchFavorites, removeFavorite } from './apiCalls';
-import { apiKey } from '../apiKey'
+import { apiKey } from './apiKey'
 import { async } from 'q';
 
 describe('apiCalls', () => {

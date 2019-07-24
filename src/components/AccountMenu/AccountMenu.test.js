@@ -28,7 +28,7 @@ describe('accountMenu', () => {
       expect(wrapper).toMatchSnapshot();
     });
   
-    it('should change state when handleChange is invoked', () => {
+    it.skip('should change state when handleChange is invoked', () => {
       const e = {
         target: {
           name: 'email',
@@ -39,7 +39,7 @@ describe('accountMenu', () => {
       expect(wrapper.state('email')).toEqual('blah@blah.com')
     });
   
-    it('should change state of display when handleSubmit resolves', async () => {
+    it.skip('should change state of display when handleSubmit resolves', async () => {
       const e = {
         preventDefault: jest.fn()
       }
@@ -48,7 +48,7 @@ describe('accountMenu', () => {
       expect(wrapper.state('display')).toEqual('loggedIn');
     });
   
-    it('should set state of error when handleSubmit catches an error', () => {
+    it.skip('should set state of error when handleSubmit catches an error', () => {
       const e = {
         preventDefault: jest.fn()
       }

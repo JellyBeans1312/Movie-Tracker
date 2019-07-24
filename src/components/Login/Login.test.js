@@ -19,7 +19,7 @@ describe('Login', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should invoke handleSubmit on submit', () => {
+  it.skip('should invoke handleSubmit on submit', () => {
     const e = {
       preventDefault: jest.fn()
     }
@@ -28,7 +28,7 @@ describe('Login', () => {
     expect(wrapper.instance().handleSubmit(e));
   });
 
-  it('should invoke handleChange on change', () => {
+  it.skip('should invoke handleChange on change', () => {
     wrapper.find(".log-in-email").simulate('change', {value: 'whatever'})
     console.log(wrapper.length);
     expect(instance.handleChange());

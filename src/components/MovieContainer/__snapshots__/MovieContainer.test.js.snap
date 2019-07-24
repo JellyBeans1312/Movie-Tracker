@@ -14,4 +14,3 @@ exports[`MovieContainer should match snapshot 1`] = `
   />
 </section>
 `;
-exports[`MovieContainer should match snapshot 1`] = `ShallowWrapper {}`;
