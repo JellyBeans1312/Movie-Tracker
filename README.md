@@ -1,68 +1,70 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# !Netflix
 
-## Available Scripts
+This was a two week group project at Turing School of Software & Design, where we used a movie database API to display now playing movies using React, Router, and Redux. This application fetches from [The Movie DB](https://www.themoviedb.org/documentation/api) to display the information. A user has the ability to login, or create an account. Once an account is created the user has the ability to favorite and delete favorited movies.
 
-In the project directory, you can run:
+## Created By
 
-### `npm start`
+Antonio Fry https://github.com/AntonioFry
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Aidan McKay https://github.com/JellyBeans1312
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+Colby Allen https://github.com/colbyallen012
 
-### `npm test`
+## Screenshots
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![screencapture-localhost-3001-2019-07-23-23_48_24](https://user-images.githubusercontent.com/43159025/61768389-90f92680-ada4-11e9-9f66-fe61d63511c5.png)
 
-### `npm run build`
+![screencapture-localhost-3001-LoggedIn-2019-07-23-23_48_42](https://user-images.githubusercontent.com/43159025/61768425-abcb9b00-ada4-11e9-8e62-e03d02b9b559.png)
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Movie Details
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![screencapture-localhost-3001-420818-2019-07-23-23_48_52](https://user-images.githubusercontent.com/43159025/61768450-bc7c1100-ada4-11e9-806f-29b98bb82de8.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Favorites
 
-### `npm run eject`
+![screencapture-localhost-3001-favorites-2019-07-23-23_49_04](https://user-images.githubusercontent.com/43159025/61768461-cb62c380-ada4-11e9-96ae-daea20b74aa3.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Built With
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+React
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Router
 
-## Learn More
+Redux
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Testing with Enzyme & Jest
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### To Run
 
-### Code Splitting
+#### Front End
+In your terminal:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```bash
+git clone git@github.com:AntonioFry/Movie-Tracker.git
+```
 
-### Analyzing the Bundle Size
+```bash
+npm  install
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+Go to `http://localhost:3000/` in your browser to view the code running in the browser.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+#### Back End
 
-### Advanced Configuration
+```bash
+git clone https://github.com/turingschool-examples/movie-tracker
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```bash
+npm  install
+```
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```bash
+npm start
+```
+Go to `http://localhost:3001/api/users` in your browser you'll see a json response with one user.

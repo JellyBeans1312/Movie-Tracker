@@ -22,7 +22,7 @@ export const SignUp = ({name, email, password, handleAddChange, handleAdd}) => {
           onChange={handleAddChange}
         />
         <input className='sign-up'
-          type="text"
+          type="password"
           value={password}
           name="password"
           placeholder='Password'

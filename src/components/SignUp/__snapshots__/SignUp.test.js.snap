@@ -27,7 +27,7 @@ exports[`SignUp should match snapshot 1`] = `
       name="password"
       onChange={[MockFunction]}
       placeholder="Password"
-      type="text"
+      type="password"
       value="imBetterThanBIGBoi321"
     />
     <button

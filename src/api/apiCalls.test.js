@@ -1,5 +1,5 @@
-import { fetchMovies, getUser, addUser, favoriteMovie, fetchFavorites } from './apiCalls';
-import { apiKey } from '../apiKey'
+import { fetchMovies, getUser, addUser, favoriteMovie, fetchFavorites, removeFavorite } from './apiCalls';
+import { apiKey } from './apiKey'
 import { async } from 'q';
 
 describe('apiCalls', () => {
@@ -89,7 +89,6 @@ describe('apiCalls', () => {
     });
     
     it('should return a user if response is ok', async () => {  
-      console.log(getUser(user))
       await expect(getUser(user)).resolves.toEqual(mockResponse.data);
     });
 
@@ -99,13 +98,12 @@ describe('apiCalls', () => {
           ok: false
         });
       });
-      expect(getUser()).resolves.toMatch('');
+      expect(getUser()).resolves.toEqual('Email and password do not match');
     });
   });
 
   describe('addUser', () => {
     let user;
-    let signUp;
     
     beforeEach(() => {
       user = user = { email: 'something@nowhere.com', name: 'name', password: 'password' }
@@ -115,7 +113,6 @@ describe('apiCalls', () => {
           json: () => Promise.resolve(user)
         });
       });
-      signUp = jest.fn();
     });
 
     it('should POST a new user given the correct url', () => {
@@ -157,7 +154,6 @@ describe('apiCalls', () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
           ok: true,
-          // json: () => Promise.resolve(user)
         });
       });
     })
@@ -181,7 +177,7 @@ describe('apiCalls', () => {
           ok: false
         });
       });
-      expect(favoriteMovie(movieInfo)).resolves.toMatch('');
+      expect(favoriteMovie(movieInfo)).resolves.toEqual('Failed to fetch favorites');
     });
   });
 
@@ -191,7 +187,7 @@ describe('apiCalls', () => {
 
     beforeEach(() => {
       mockResponse = {
-        results: [{
+        data: [{
           adult: false,
           backdrop_path: "/dihW2yTsvQlust7mSuAqJDtqW7k.jpg",
           genre_ids: Array[3],
@@ -221,9 +217,66 @@ describe('apiCalls', () => {
       fetchFavorites(userId);
       expect(window.fetch).toHaveBeenCalledWith(url);
     });
+
+    it('should return a parsed result if response resolves', async () => {
+      await expect(fetchFavorites(1)).resolves.toEqual(mockResponse.data);
+    });
+
+    it('should throw an error if response rejects', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: false
+        });
+      });
+      const expected = Error('Failed to fetch favorites')
+
+      await expect(fetchFavorites(1)).rejects.toEqual(expected)
+    });
   });
 
   describe('removeFavorites', () => {
+    let movieInfo;
 
+    beforeEach(() => {
+      movieInfo = {
+        movie_id: 1,
+        user_id: 1,
+        title: 'title',
+        poster_path: 'something.jpg',
+        release_date: '11/05/2000',
+        vote_average: 7,
+        overview: "I don't know"
+      };
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+        });
+      });
+    })
+
+    it('should DELETE from api when passed the correct url', () => {
+      const url = `http://localhost:3000/api/users/1/favorites/1`
+      const option = {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
+
+      removeFavorite(1, 1);
+
+      expect(window.fetch).toHaveBeenCalledWith(url, option);
+    });
+
+    it('should throw an error if response rejects', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject({
+          ok: false
+        });
+      });
+      const expected = Error('Failed to remove favorite')
+
+      await expect(removeFavorite(0, 1)).rejects.toEqual(expected)
+    })
   });
 });
