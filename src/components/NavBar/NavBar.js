@@ -9,7 +9,7 @@ import { logOut, setFavorites } from '../../actions';
 import { connect } from 'react-redux';
 import './NavBar.css'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types';a
+import PropTypes from 'prop-types';
 
 export class NavBar extends Component {
   constructor(props) {
