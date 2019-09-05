@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/!netflix/static/css/main.02070ed0.chunk.css",
-    "main.js": "/!netflix/static/js/main.54f15d18.chunk.js",
-    "main.js.map": "/!netflix/static/js/main.54f15d18.chunk.js.map",
-    "runtime~main.js": "/!netflix/static/js/runtime~main.48b87c9c.js",
-    "runtime~main.js.map": "/!netflix/static/js/runtime~main.48b87c9c.js.map",
-    "static/js/2.6c43f2ff.chunk.js": "/!netflix/static/js/2.6c43f2ff.chunk.js",
-    "static/js/2.6c43f2ff.chunk.js.map": "/!netflix/static/js/2.6c43f2ff.chunk.js.map",
-    "index.html": "/!netflix/index.html",
-    "precache-manifest.2660d9a5cfe510a018915728361723c7.js": "/!netflix/precache-manifest.2660d9a5cfe510a018915728361723c7.js",
-    "service-worker.js": "/!netflix/service-worker.js",
-    "static/css/main.02070ed0.chunk.css.map": "/!netflix/static/css/main.02070ed0.chunk.css.map"
+    "main.css": "/Movie-Tracker/static/css/main.02070ed0.chunk.css",
+    "main.js": "/Movie-Tracker/static/js/main.9474845a.chunk.js",
+    "main.js.map": "/Movie-Tracker/static/js/main.9474845a.chunk.js.map",
+    "runtime~main.js": "/Movie-Tracker/static/js/runtime~main.51f8b371.js",
+    "runtime~main.js.map": "/Movie-Tracker/static/js/runtime~main.51f8b371.js.map",
+    "static/js/2.6c43f2ff.chunk.js": "/Movie-Tracker/static/js/2.6c43f2ff.chunk.js",
+    "static/js/2.6c43f2ff.chunk.js.map": "/Movie-Tracker/static/js/2.6c43f2ff.chunk.js.map",
+    "index.html": "/Movie-Tracker/index.html",
+    "precache-manifest.60ec15e7f9c042c35f5a1335d031ee43.js": "/Movie-Tracker/precache-manifest.60ec15e7f9c042c35f5a1335d031ee43.js",
+    "service-worker.js": "/Movie-Tracker/service-worker.js",
+    "static/css/main.02070ed0.chunk.css.map": "/Movie-Tracker/static/css/main.02070ed0.chunk.css.map"
   }
 }
