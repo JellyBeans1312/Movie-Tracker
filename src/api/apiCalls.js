@@ -2,7 +2,7 @@
 import { apiKey } from './apiKey'
 
 export const fetchMovies = () => {
-  return fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=044b86cc1259591cb5a872bda8d25edd&language=en-US&page=1`)
+  return fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}edd&language=en-US&page=1`)
     .then(res => res.json())
     .then(res => res.results)
     .catch (error => error.message)   
