@@ -1,7 +1,7 @@
 {
   "name": "movie-tracker",
   "version": "0.1.0",
-  "homepage": "http://jellybeans1312.github.io/!netflix",
+  "homepage": "http://jellybeans1312.github.io/Movie-Tracker",
   "private": true,
   "dependencies": {
     "prop-types": "^15.7.2",
